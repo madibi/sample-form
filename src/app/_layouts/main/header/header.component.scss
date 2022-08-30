@@ -1,0 +1,9 @@
+@import 'core';
+
+:host {
+    height: $header-height;
+}
+
+mat-toolbar {
+    height: $header-height;
+}

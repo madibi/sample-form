@@ -1,0 +1,8 @@
+<nav mat-tab-nav-bar mat-align-tabs="center" [backgroundColor]="background">
+   <a mat-tab-link 
+   *ngFor="let tabBar of tabBars" 
+   (click)="activeLink = tabBar" 
+   [active]="activeLink == tabBar">
+      <mat-icon>{{tabBar.icon}}</mat-icon>
+   </a>
+</nav>

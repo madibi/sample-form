@@ -1,0 +1,62 @@
+@import './core/core.scss';
+@include mat-core();
+@include angular-material-typography($typography);
+
+:root { }
+
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+
+  &.app-LIGHT {
+    @include angular-material-theme($theme-light);
+    --foreground: #{$foregroundLight};
+    --background: #{$backgroundLight};
+    --disabledText: #{$disabledTextLight};
+    --divider: #{$dividerLight};
+  }
+
+  &.app-DARK {
+    @include angular-material-theme($theme-dark);
+    --foreground: #{$foregroundDark};
+    --background: #{$backgroundDark};
+    --disabledText: #{$disabledTextDark};
+    --divider: #{$dividerDark};
+  }
+}
+
+// prepare app-general animation
+app-general {
+    > .general-wrapper {
+      position: relative;
+  
+      > * {
+          position: absolute;
+          width: 100%;
+          top: 0;
+      }
+    }
+  }
+  
+  // prepare main animation
+  mat-sidenav-container {
+    > mat-sidenav-content {
+      > main {
+        min-height: calc(100vh - ($header-height + $footer-height));
+        > .router {
+          position: relative;
+  
+          > router-outlet {
+            & ~ * {
+              position: absolute;
+              padding: 1rem;
+              width: calc(100% - 2rem);
+              min-height: calc(100vh - ($header-height + $footer-height));
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }

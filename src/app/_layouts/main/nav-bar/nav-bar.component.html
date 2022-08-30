@@ -1,0 +1,18 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+    class="sidenav" 
+    [(opened)]="appInfoService.isSidenavOpened"
+    fixedInViewport
+      [attr.role]="appInfoService.isHandset ? 'dialog' : 'navigation'"
+      [mode]="appInfoService.isHandset ? 'over' : 'side'"
+      [opened]="appInfoService.isHandset === false">
+    <mat-toolbar>{{sideBArTitle}}</mat-toolbar>
+    <ng-content select="mat-nav-list"></ng-content>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content select="app-header"></ng-content>
+    <ng-content select="main"></ng-content>
+    <ng-content select="app-footer" *ngIf="!appInfoService.isHandset"></ng-content>
+    <ng-content select="app-tabs" *ngIf="appInfoService.isHandset"></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

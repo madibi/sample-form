@@ -1,0 +1,80 @@
+// // in custom case
+// @import "./custom.scss";
+// $palette-primary: $custom-palette-primary;
+// $palette-accent: $custom-palette-accent;
+// $palette-warn: $custom-palette-warn;
+// $typography: $custom-typography-settings;
+// $theme-light: $custom-light-theme;
+// $theme-dark: $custom-dark-theme;
+
+// in dynamic case
+@import "./dynamic.scss";
+$palette-primary: $dynamic-palette-primary;
+$palette-accent: $dynamic-palette-accent;
+$palette-warn: $dynamic-palette-warn;
+$typography: $dynamic-typography-settings;
+$theme-light: $dynamic-light-theme;
+$theme-dark: $dynamic-dark-theme;
+
+// main colors
+// primary
+$primary50: mat-color($palette-primary, 50);
+$primary100: mat-color($palette-primary, 100);
+$primary200: mat-color($palette-primary, 200);
+$primary300: mat-color($palette-primary, 300);
+$primary400: mat-color($palette-primary, 400);
+$primary: mat-color($palette-primary, 500);
+$primary600: mat-color($palette-primary, 600);
+$primary700: mat-color($palette-primary, 700);
+$primary800: mat-color($palette-primary, 800);
+$primary900: mat-color($palette-primary, 900);
+// accent
+$accent50: mat-color($palette-accent, 50);
+$accent100: mat-color($palette-accent, 100);
+$accent200: mat-color($palette-accent, 200);
+$accent300: mat-color($palette-accent, 300);
+$accent400: mat-color($palette-accent, 400);
+$accent: mat-color($palette-accent, 500);
+$accent600: mat-color($palette-accent, 600);
+$accent700: mat-color($palette-accent, 700);
+$accent800: mat-color($palette-accent, 800);
+$accent900: mat-color($palette-accent, 900);
+// warn
+$warn50: mat-color($palette-warn, 50);
+$warn100: mat-color($palette-warn, 100);
+$warn200: mat-color($palette-warn, 200);
+$warn300: mat-color($palette-warn, 300);
+$warn400: mat-color($palette-warn, 400);
+$warn: mat-color($palette-warn, 500);
+$warn600: mat-color($palette-warn, 600);
+$warn700: mat-color($palette-warn, 700);
+$warn800: mat-color($palette-warn, 800);
+$warn900: mat-color($palette-warn, 900);
+
+// fg bg - light
+$foreground-light-palette: map-get($theme-light, foreground);
+$background-light-palette: map-get($theme-light, background);
+$foregroundLight: mat-color($foreground-light-palette, text);
+$backgroundLight: mat-color($background-light-palette, background); 
+$disabledTextLight: mat-color($foreground-light-palette, disabled-text);
+$dividerLight: mat-color($foreground-light-palette, divider);
+
+// fg bg - dark
+$foreground-dark-palette: map-get($theme-dark, foreground);
+$background-dark-palette: map-get($theme-dark, background);
+$foregroundDark: mat-color($foreground-dark-palette, text);
+$backgroundDark: mat-color($background-dark-palette, background);
+$disabledTextDark: mat-color($foreground-dark-palette, disabled-text);
+$dividerDark: mat-color($foreground-dark-palette, divider);
+
+// other colors
+// light blue
+$lightBlue200: mat-color($mat-light-blue, 200);
+$lightBlue300: mat-color($mat-light-blue, 300);
+$lightBlue400: mat-color($mat-light-blue, 400);
+$lightBlue500: mat-color($mat-light-blue, 500);
+$lightBlue600: mat-color($mat-light-blue, 600);
+$lightBlue700: mat-color($mat-light-blue, 700);
+$lightBlue800: mat-color($mat-light-blue, 800);
+
+

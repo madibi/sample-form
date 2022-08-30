@@ -1,0 +1,11 @@
+@import 'core';
+
+a {
+    color: $lightBlue500;
+    @include transition();
+    cursor: pointer;
+
+    &:hover {
+        color: $lightBlue300;
+    }
+}

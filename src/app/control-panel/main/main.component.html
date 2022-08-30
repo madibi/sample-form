@@ -1,0 +1,164 @@
+<div class="container">
+    <mat-card>
+        <mat-card-content>
+          <h2 class="example-h2">App Information</h2>
+      
+          <section class="boolean-section">
+            <p>
+                <mat-checkbox 
+                [disabled]="true"
+                class="example-margin" 
+                [(ngModel)]="appInfoService.isHandset">isHandset</mat-checkbox>
+            </p>
+
+            <p>            
+                <mat-checkbox 
+                [disabled]="true"
+                class="example-margin" 
+                [(ngModel)]="appInfoService.isTablet">isTablet</mat-checkbox>
+            <p>
+
+            <p>
+                <mat-checkbox 
+                [disabled]="true"
+                class="example-margin" 
+                [(ngModel)]="appInfoService.isWeb">isWeb</mat-checkbox>                
+            </p> 
+
+            <p>
+                <mat-checkbox 
+                [disabled]="true"
+                class="example-margin" 
+                [(ngModel)]="appInfoService.isPortrait">isPortrait</mat-checkbox>
+            </p>
+
+            <p>
+                <mat-checkbox 
+                [disabled]="true"
+                class="example-margin" 
+                [(ngModel)]="appInfoService.isLandscape">isLandscape</mat-checkbox>
+            </p>  
+
+            <p>
+                <mat-checkbox 
+                [disabled]="true"
+                class="example-margin" 
+                [(ngModel)]="appInfoService.isCustomBreakPoint">isCustomBreakPoint</mat-checkbox>                            
+            </p>  
+
+            <p>
+                <mat-checkbox 
+                [disabled]="true"
+                class="example-margin" 
+                [(ngModel)]="appInfoService.isSidenavOpened">isSidenavOpened</mat-checkbox>                            
+            </p>              
+
+            <hr />
+
+            <p>
+                <mat-label class="key">Custom Break Points</mat-label>
+                <mat-label class="value">{{appInfoService.customBreakPoints | json}}</mat-label>
+            </p>   
+            
+            <p>
+                <mat-label class="key">Screen Width</mat-label>
+                <mat-label class="value">{{appInfoService.screenWidth}}</mat-label>
+            </p>  
+            
+            <p>
+                <mat-label class="key">Screen Height</mat-label>
+                <mat-label class="value">{{appInfoService.screenHeight}}</mat-label>
+            </p>                    
+          </section>
+
+          <section class="version-section">             
+            <p>
+                <mat-label class="key">Material Version</mat-label>
+                <mat-label class="value">{{appInfoService.materialVersion.full}}</mat-label>
+            </p>     
+            <p>
+                <mat-label class="key">CDK Version</mat-label>
+                <mat-label class="value">{{appInfoService.cdkVersion.full}}</mat-label>
+            </p> 
+            <p>
+                <mat-label class="key">Angular Version</mat-label>
+                <mat-label class="value">{{appInfoService.angularVersion.full}}</mat-label>
+            </p>                                         
+          </section>
+
+          <section class="direction-section">             
+            <p>
+                <mat-label class="key">App Direction</mat-label>
+                <mat-label class="value">{{appLanguageService.appDirection}}</mat-label>  
+                <mat-label class="key">LanguageCode</mat-label>
+                <mat-label class="value">{{appLanguageService.languageCode}}</mat-label>  
+                <mat-label class="key">LanguageLocale</mat-label>
+                <mat-label class="value">{{appLanguageService.languageLocale}}</mat-label>                  
+                <button 
+                    mat-flat-button 
+                    color="primary" 
+                    *ngIf="appLanguageService.languageId === 2" 
+                    (click)="changeLanguageToEnglish()">ENGLISH</button>    
+                <button 
+                    mat-flat-button 
+                    color="primary" 
+                    *ngIf="appLanguageService.languageId === 1" 
+                    (click)="changeLanguageToFarsi()">FARSI</button>                              
+            </p>          
+          </section> 
+
+          <section class="theme-section">             
+            <p>
+                <mat-label class="key">App Theme</mat-label>
+                <mat-label class="value">{{appThemeService.appTheme}}</mat-label>      
+                <button 
+                    mat-flat-button 
+                    color="primary" 
+                    *ngIf="appThemeService.appTheme === appTheme.LIGHT" 
+                    (click)="changeThemeToDark()">DARK</button> 
+                <button 
+                    mat-flat-button 
+                    color="primary" 
+                    *ngIf="appThemeService.appTheme === appTheme.DARK" 
+                    (click)="changeThemeToLight()">LIGHT</button>                          
+            </p>        
+          </section>  
+          
+          <section class="color-section">             
+            <p>
+                <button mat-flat-button color="primary">Primary Color</button>
+                <span class="color-picker-wrapper">
+                    <span class="color-picker"
+                    [style.backgroundColor]="appThemeService.primaryColor"                
+                    [cpPositionOffset]="'50%'"
+                    [cpPositionRelativeToArrow]="true"
+                    (colorPickerChange)="primaryColorChange($event)"
+                    [(colorPicker)]="appThemeService.primaryColor"></span>
+                </span>
+            </p>            
+            <p>
+                <button mat-flat-button color="accent">Accent Color</button>
+                <span class="color-picker-wrapper">
+                    <span class="color-picker"
+                    [style.backgroundColor]="appThemeService.accentColor"                
+                    [cpPositionOffset]="'50%'"
+                    [cpPositionRelativeToArrow]="true"
+                    (colorPickerChange)="accentColorChange($event)"
+                    [(colorPicker)]="appThemeService.accentColor"></span>
+                </span>                
+            </p>            
+            <p>
+                <button mat-flat-button color="warn">Warn Color</button>
+                <span class="color-picker-wrapper">
+                    <span class="color-picker"
+                    [style.backgroundColor]="appThemeService.warnColor"                
+                    [cpPositionOffset]="'50%'"
+                    [cpPositionRelativeToArrow]="true"
+                    (colorPickerChange)="warnColorChange($event)"
+                    [(colorPicker)]="appThemeService.warnColor"></span>
+                </span>                
+            </p>                                    
+          </section>            
+        </mat-card-content>
+      </mat-card>
+</div>
